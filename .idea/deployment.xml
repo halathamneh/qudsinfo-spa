@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="nodejs.qudsinfo.com" uploadOnCheckin="c7d6e73a-20d3-4dbf-aa90-7c302be8c01f">
+    <serverData>
+      <paths name="nodejs.qudsinfo.com">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/nodejs.qudsinfo.com" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="nodejs.qudsinfo.com" />
+  </component>
+</project>

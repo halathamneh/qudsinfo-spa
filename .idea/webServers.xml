@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c7d6e73a-20d3-4dbf-aa90-7c302be8c01f" name="nodejs.qudsinfo.com" url="http://nodejs.qudsinfo.com">
+        <fileTransfer host="qudsinfo.com" port="2222" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/home/qudsin5/" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2222" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
