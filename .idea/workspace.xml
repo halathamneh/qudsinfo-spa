@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2651ea55-ffbe-488b-8dd4-966e123cc773" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/images/cloud-1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/images/cloud-2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/images/cloud-3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/images/cloud-4.svg" afterDir="false" />
-    </list>
+    <list default="true" id="2651ea55-ffbe-488b-8dd4-966e123cc773" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566329129670</updated>
       <workItem from="1566329137087" duration="4984000" />
-      <workItem from="1566560758805" duration="811000" />
+      <workItem from="1566560758805" duration="1495000" />
     </task>
     <task id="LOCAL-00001" summary="add hero">
       <created>1566331314747</created>
