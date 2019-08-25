@@ -13,14 +13,6 @@ export default {
         name: 'description',
         content: process.env.npm_package_description || ''
       }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/png', href: '/icon.png' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Tajawal:400,700&display=swap'
-      }
     ]
   },
   /*
@@ -51,8 +43,19 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    'nuxt-svg',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: [
+      './node_modules/bootstrap/scss/_functions.scss',
+      './node_modules/bootstrap/scss/_variables.scss',
+      './node_modules/bootstrap/scss/mixins/_breakpoints.scss',
+      '~assets/scss/_variables.scss'
+    ]
+  },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -87,6 +90,9 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    babel: {
+      babelrc: true
+    }
   }
 }

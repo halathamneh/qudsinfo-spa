@@ -1,9 +1,18 @@
 <template>
-  <div class="container">
-    <h1>Hello There!</h1>
+  <div>
+    <hero />
+    <info-of-today />
   </div>
 </template>
 
 <script>
-export default {}
+import Hero from '~/components/hero/Hero'
+import InfoOfToday from '~/components/iot/InfoOfToday'
+
+export default {
+  components: {
+    Hero,
+    InfoOfToday
+  }
+}
 </script>

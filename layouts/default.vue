@@ -1,19 +1,16 @@
 <template>
   <div>
     <app-header />
-    <hero />
     <nuxt />
   </div>
 </template>
 
 <script>
-import Hero from '../components/sections/Hero'
-import Header from '~/components/partials/Header'
+import Header from '~/components/header/Header'
 
 export default {
   components: {
-    appHeader: Header,
-    Hero
+    appHeader: Header
   }
 }
 </script>

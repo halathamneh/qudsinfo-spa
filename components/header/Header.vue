@@ -1,14 +1,17 @@
 <template>
   <header>
     <logo />
+    <navbar />
   </header>
 </template>
 
 <script>
-import Logo from './Logo.vue'
+import Logo from '../partials/Logo.vue'
+import Navbar from './Navbar'
 
 export default {
   components: {
+    Navbar,
     Logo
   }
 }
@@ -17,15 +20,18 @@ export default {
 <style lang="scss">
 header {
   box-sizing: border-box;
-  height: 65px;
+  min-height: $header-height;
   display: flex;
   align-items: center;
   padding: 0 35px;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 99;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #4f3a83;
+  @include media-breakpoint-down('sm') {
+    padding: 0 8px;
+  }
 }
 </style>

@@ -10,10 +10,11 @@ export default {}
 
 <style lang="scss" scoped>
 .site-logo {
-  height: 45px;
-  display: block;
+  height: $header-height;
+  display: flex;
+  align-items: center;
   img {
-    height: 100%;
+    height: 45px;
   }
 }
 </style>
