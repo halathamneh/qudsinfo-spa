@@ -1,11 +1,15 @@
 <template>
-  <b-navbar toggleable="lg" type="dark">
+  <b-navbar toggleable="xl" type="dark">
     <navbar-toggler
       :class="{ 'navbar-toggler': true, 'bring-to-front': menuVisible }"
       :active="menuVisible"
       :toggle-menu="toggleMenu"
     />
-    <div v-if="menuVisible" id="nav-collapse" class="navbar-collapse">
+    <div
+      v-if="menuVisible || desktop"
+      id="nav-collapse"
+      class="navbar-collapse"
+    >
       <b-navbar-nav>
         <nuxt-link class="nav-link" to="/">معلوماتنا</nuxt-link>
         <nuxt-link class="nav-link" to="/">القدس عن قرب</nuxt-link>
@@ -32,22 +36,28 @@
   flex: 1;
   padding-right: 0;
   padding-left: 0;
+
   &-nav {
     padding-right: 20px;
   }
 }
+
 .nav-link {
-  font-weight: bold;
-  margin-left: 12px;
+  margin-left: 8px;
+  white-space: nowrap;
 }
+
 .navbar-toggler {
   margin-right: auto;
   margin-left: 16px;
+  display: flex;
+
   &.bring-to-front {
     z-index: 9999;
   }
 }
-@include media-breakpoint-down('sm') {
+
+@include media-breakpoint-down('lg') {
   .navbar-collapse {
     position: fixed;
     top: 0;
@@ -81,6 +91,7 @@
 </style>
 
 <script>
+import throttle from 'lodash/throttle'
 import HeaderSearch from '../HeaderSearch'
 import NavbarToggler from './NavbarToggler'
 
@@ -88,13 +99,25 @@ export default {
   components: { HeaderSearch, NavbarToggler },
   data() {
     return {
-      menuVisible: false
+      menuVisible: false,
+      desktop: false
     }
+  },
+  mounted() {
+    this.onWindowResize()
+    window.addEventListener('resize', this.onWindowResize)
+  },
+
+  destroyed() {
+    window.removeEventListener('resize', this.onWindowResize)
   },
   methods: {
     toggleMenu() {
       this.menuVisible = !this.menuVisible
-    }
+    },
+    onWindowResize: throttle(function() {
+      this.desktop = document.documentElement.clientWidth > 1200
+    }, 100)
   }
 }
 </script>
