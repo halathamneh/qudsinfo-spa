@@ -26,7 +26,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/VueTypedJs'],
   /*
    ** Nuxt.js dev-modules
    */

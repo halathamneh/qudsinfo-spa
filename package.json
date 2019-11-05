@@ -26,7 +26,8 @@
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^6.0.1",
     "sass-loader": "^7.2.0",
-    "vue-resize-directive": "^1.2.0"
+    "vue-resize-directive": "^1.2.0",
+    "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.5.2",
