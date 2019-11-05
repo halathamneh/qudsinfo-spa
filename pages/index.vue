@@ -13,23 +13,29 @@
         </b-row>
       </b-container>
     </section>
-    <section class="newsbar-section">
-      <div class="container">
-        <newsbar />
-      </div>
-    </section>
+    <newsbar-section />
+    <aqsa-distance-section />
+    <aqsa-distance-section />
+    <aqsa-distance-section />
+    <aqsa-distance-section />
+    <aqsa-distance-section />
+    <aqsa-distance-section />
+    <aqsa-distance-section />
+    <aqsa-distance-section />
   </div>
 </template>
 
 <script>
 import OnThisDay from '../components/on-this-day/OnThisDay'
-import Newsbar from '../components/newsbar/Newsbar'
+import AqsaDistanceSection from '../components/aqsa-distance/AqsaDistanceSection'
+import NewsbarSection from '../components/newsbar/NewsbarSection'
 import Hero from '~/components/hero/Hero'
 import InfoOfToday from '~/components/iot/InfoOfToday'
 
 export default {
   components: {
-    Newsbar,
+    NewsbarSection,
+    AqsaDistanceSection,
     OnThisDay,
     Hero,
     InfoOfToday
@@ -40,8 +46,5 @@ export default {
 <style lang="scss">
 .info-of-today-section {
   margin: 28px 0 50px;
-}
-.newsbar-section {
-  background-color: #fff;
 }
 </style>
