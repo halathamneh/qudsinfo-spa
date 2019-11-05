@@ -18,7 +18,6 @@
         <nuxt-link class="nav-link" to="/">المسابقات</nuxt-link>
         <nuxt-link class="nav-link" to="/">Wallpapers</nuxt-link>
         <nuxt-link class="nav-link" to="/">صور المعالم</nuxt-link>
-        <nuxt-link class="nav-link" to="/">أسئلة شائعة</nuxt-link>
         <nuxt-link class="nav-link" to="/">أفرقتنا</nuxt-link>
         <nuxt-link class="nav-link" to="/">عن الفريق</nuxt-link>
       </b-navbar-nav>

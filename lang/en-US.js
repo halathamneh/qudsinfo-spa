@@ -1,4 +1,6 @@
 export default {
   welcome: 'Welcome',
-  slogan: 'test'
+  slogan: 'test',
+  'otd-title': 'On this day in Jerusalem',
+  'learn more': 'Learn More'
 }

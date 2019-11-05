@@ -45,7 +45,20 @@ export default {
     '@nuxtjs/pwa',
     'nuxt-i18n',
     'nuxt-svg',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    [
+      'nuxt-fontawesome',
+      {
+        component: 'fa',
+        imports: [
+          // import whole set
+          {
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: ['fas']
+          }
+        ]
+      }
+    ]
   ],
   styleResources: {
     scss: [
