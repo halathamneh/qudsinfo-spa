@@ -1,0 +1,12 @@
+@import 'fonts/Tajawal';
+@import 'variables';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+@import "~hamburgers/_sass/hamburgers/base";
+@import "~hamburgers/_sass/hamburgers/types/squeeze";
+
+@import "basic";
+
+@import "components/buttons";
+@import "components/cards";
+@import "components/AqsaDistance";

@@ -4,12 +4,22 @@ $primary-gradient: linear-gradient(180deg, $primary-dark 0%, $primary-light 106.
 $btn-primary-bg: linear-gradient(120.32deg, $primary-dark -9.19%, $primary-light 85.83%);
 
 $brand-dark: #016533;
+$brand-light: #59AF30;
+$brand-gradient: linear-gradient(238.54deg, $brand-light 2.29%, $brand-dark 92.88%);
 
 $white: #fff;
+$divider: #C4C4C4;
 
 $card-shadow: rgba(0, 0, 0, 0.15);
 
 $newsbar-gradient: linear-gradient(270deg, #920F0F 0%, #D70E0E 100%);
+
+
+$aqsa-distance-dark: #FF642F;
+$aqsa-distance-light: #EFCA54;
+$aqsa-distance-gradient: linear-gradient(128.71deg, $aqsa-distance-dark 4.01%, $aqsa-distance-light 113.82%);
+$aqsa-distance-shadow: rgba(253, 111, 51, 0.33);
+$aqsa-distance-shadow-hover: rgba(253, 111, 51, 0.73);
 
 $font-family-base: 'Tajawal', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 

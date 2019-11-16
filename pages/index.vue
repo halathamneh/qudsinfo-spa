@@ -1,27 +1,22 @@
 <template>
   <div>
     <hero />
-    <section class="info-of-today-section">
-      <b-container>
-        <b-row>
-          <b-col lg="9" class="mb-4">
-            <info-of-today />
-          </b-col>
-          <b-col lg="3" class="mb-4">
-            <on-this-day />
-          </b-col>
-        </b-row>
-      </b-container>
-    </section>
+    <info-of-today-section>
+      <template slot="extra">
+        <on-this-day />
+      </template>
+    </info-of-today-section>
     <newsbar-section />
     <aqsa-distance-section />
-    <aqsa-distance-section />
-    <aqsa-distance-section />
-    <aqsa-distance-section />
-    <aqsa-distance-section />
-    <aqsa-distance-section />
-    <aqsa-distance-section />
-    <aqsa-distance-section />
+    <services-section />
+    <teams-slideshow-section />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 </template>
 
@@ -29,16 +24,20 @@
 import OnThisDay from '../components/on-this-day/OnThisDay'
 import AqsaDistanceSection from '../components/aqsa-distance/AqsaDistanceSection'
 import NewsbarSection from '../components/newsbar/NewsbarSection'
+import ServicesSection from '../components/services/ServicesSection'
+import TeamsSlideshowSection from '../components/Teams/TeamsSlideshowSection'
+import InfoOfTodaySection from '../components/iot/InfoOfTodaySection'
 import Hero from '~/components/hero/Hero'
-import InfoOfToday from '~/components/iot/InfoOfToday'
 
 export default {
   components: {
+    InfoOfTodaySection,
+    TeamsSlideshowSection,
+    ServicesSection,
     NewsbarSection,
     AqsaDistanceSection,
     OnThisDay,
-    Hero,
-    InfoOfToday
+    Hero
   }
 }
 </script>

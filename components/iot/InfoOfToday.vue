@@ -18,7 +18,10 @@
         </b-card-text>
 
         <div class="card-links mt-auto">
-          <nuxt-link class="btn btn-primary" to="#">عرض المعلومة</nuxt-link>
+          <nuxt-link class="btn btn-primary" to="#">
+            <fa :icon="['fas', 'share']" />
+            <span>{{ $t('share') }}</span>
+          </nuxt-link>
           <nuxt-link class="btn btn-link" to="#">جميع المعلومات</nuxt-link>
         </div>
       </b-card-body>

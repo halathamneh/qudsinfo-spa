@@ -1,0 +1,56 @@
+[
+  {
+    "title": "معلوماتنا",
+    "description": "معلومات مقدسية مكتوبة ومسموعة ومرئية",
+    "image": "/images/services/our_info.svg",
+    "href": "#"
+  },
+  {
+    "title": "الأخبار",
+    "description": "كن أول من يعرف أخبار القدس والمسجد الأقصى",
+    "image": "/images/services/news.svg",
+    "href": "#"
+  },
+  {
+    "title": "المكتبة",
+    "description": "أكبر مكتبة الكترونية مختصة في المسجد الأقصى",
+    "image": "/images/services/library.svg",
+    "href": "#"
+  },
+  {
+    "title": "القدس عن قرب",
+    "description": "تعرف عن قرب على معالم الأقصى والبلدة القديمة",
+    "image": "/images/services/knowquds.svg",
+    "href": "#"
+  },
+  {
+    "title": "المسابقات",
+    "description": "اختبر معلوماتك المقدسية وتحدى أصدقاءك",
+    "image": "/images/services/quizzes.svg",
+    "href": "#"
+  },
+  {
+    "title": "معالم الأقصى",
+    "description": "صور لجميع معالم الأقصى والبلدة القديمة",
+    "image": "/images/services/milestones.svg",
+    "href": "#"
+  },
+  {
+    "title": "بعدك عن الأقصى",
+    "description": "اعرف بعدك عن الأقصى من أي نقطة في العالم",
+    "image": "/images/services/aqsadistance.svg",
+    "href": "#"
+  },
+  {
+    "title": "Wallpapers",
+    "description": "ابحث عن صورة الأقصى المناسبة لهاتفك أو كمبيوترك",
+    "image": "/images/services/wallpapers.svg",
+    "href": "#"
+  },
+  {
+    "title": "حدث في هذا اليوم",
+    "description": "تعرف على الأحداث التي حصلت في المسجد الأقصى والقدس",
+    "image": "/images/services/otd.svg",
+    "href": "#"
+  }
+]

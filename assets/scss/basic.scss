@@ -1,0 +1,30 @@
+html,
+body {
+  box-sizing: content-box;
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+.gradient-primary {
+  background: $primary-gradient;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+  h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 0 34px 10px;
+    border-bottom: 1px solid $divider;
+  }
+}

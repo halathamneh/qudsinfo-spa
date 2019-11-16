@@ -8,14 +8,28 @@
         <span>الموافق 12 ربيع الأول</span>
       </template>
       <b-list-group flush>
-        <b-list-group-item>Test</b-list-group-item>
-        <b-list-group-item>Test 2</b-list-group-item>
+        <b-list-group-item
+          v-b-tooltip.hover.bottom="'Description here for OTD'"
+          action
+          href="#"
+        >
+          Test
+          <fa :icon="['fas', 'angle-left']" />
+        </b-list-group-item>
+        <b-list-group-item
+          v-b-tooltip.hover.bottom="'Description here for OTD'"
+          action
+          href="#"
+        >
+          Test 2
+          <fa :icon="['fas', 'angle-left']"
+        /></b-list-group-item>
       </b-list-group>
       <b-card-body>
-        <b-link href="#">
+        <b-button variant="link" href="#">
           {{ $t('learn more') }}
           <fa :icon="['fas', 'angle-double-left']" />
-        </b-link>
+        </b-button>
       </b-card-body>
     </b-card>
   </div>
@@ -49,6 +63,7 @@ export default {
     text-align: center;
     border-bottom: 4px solid #d70e0e;
     position: relative;
+    margin-bottom: 24px;
     &::after {
       position: absolute;
       width: 100%;
@@ -57,15 +72,31 @@ export default {
       content: '';
       top: 100%;
       left: 0;
-      z-index: 99;
+      z-index: 1;
       box-shadow: 0 0 15px rgba(215, 14, 14, 0.5);
     }
+  }
+  .card-body {
+    text-align: center;
   }
   .list-group-item {
     background-color: transparent;
     border-color: #e5e5e5;
-    &:first-child {
-      padding-top: 24px;
+    position: relative;
+    svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translate(200%, -50%);
+      opacity: 0;
+      transition: all 0.25s;
+    }
+    &:hover {
+      background-color: $white;
+      svg {
+        transform: translate(0, -50%);
+        opacity: 1;
+      }
     }
   }
 }
