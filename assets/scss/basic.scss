@@ -28,3 +28,7 @@ body {
     border-bottom: 1px solid $divider;
   }
 }
+
+.swiper-pagination-bullet-active {
+  background-color: rgba(#ffffff, 0.5) !important;
+}

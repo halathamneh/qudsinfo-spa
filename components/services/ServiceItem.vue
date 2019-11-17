@@ -32,7 +32,7 @@ export default {
   margin-bottom: 16px;
   height: 148px;
   color: #000;
-  transition: all 0.4s;
+  transition: background 0.3s, transform 0.1s ease-in-out;
   position: relative;
   background: $primary-light;
   background: linear-gradient(
