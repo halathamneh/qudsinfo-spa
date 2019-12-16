@@ -10,13 +10,6 @@
     <aqsa-distance-section />
     <services-section />
     <teams-slideshow-section />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
   </div>
 </template>
 

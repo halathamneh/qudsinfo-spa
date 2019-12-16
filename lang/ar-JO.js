@@ -9,5 +9,11 @@ export default {
   'your aqsa distance': 'بعدك عن الأقصى',
   'click aqsa distance': 'اضغط هنا لحساب بعدك!',
   'our services': 'ماذا نقدم؟',
-  teams: 'أفرقتنا'
+  teams: 'أفرقتنا',
+  'know more': 'اعرف أكثر',
+  language: 'اللغة',
+  arabic: 'العربية',
+  'arabic-short': 'AR',
+  english: 'English',
+  'english-short': 'EN'
 }

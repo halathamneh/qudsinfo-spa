@@ -29,7 +29,8 @@ export default {
     teams: TeamsData,
     swiperOption: {
       pagination: {
-        el: '.swiper-pagination'
+        el: '.swiper-pagination',
+        clickable: true
       },
       spaceBetween: 64
     }

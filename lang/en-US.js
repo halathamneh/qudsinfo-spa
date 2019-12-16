@@ -9,5 +9,11 @@ export default {
   'your aqsa distance': 'Your Distance from Aqsa',
   'click aqsa distance': 'Find your distance from Aqsa!',
   'our services': 'Our Services',
-  teams: 'Teams'
+  teams: 'Teams',
+  'know more': 'More',
+  language: 'Language',
+  arabic: 'العربية',
+  'arabic-short': 'AR',
+  english: 'English',
+  'english-short': 'EN'
 }

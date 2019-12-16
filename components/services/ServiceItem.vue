@@ -45,12 +45,16 @@ export default {
   background-repeat: no-repeat;
   background-position: -100% 0;
   background-size: 220%;
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     text-decoration: none;
     background-position: 100% 0;
     color: $white;
     transform: scale(1.15);
     z-index: 9;
+    outline: none;
+    box-shadow: 0 0 40px rgba(150, 150, 150, 0.75);
     h3 {
       color: inherit;
     }
