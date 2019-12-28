@@ -5,14 +5,14 @@
         <h2>{{ $t('teams') }}</h2>
       </div>
       <div class="section-content">
-        <no-ssr placeholder="Loading...">
-          <swiper :options="swiperOption">
-            <swiper-slide v-for="(team, i) in teams" :key="i" class="slide">
-              <team-slideshow-item :item="team" />
-            </swiper-slide>
-            <div slot="pagination" class="swiper-pagination"></div>
-          </swiper>
-        </no-ssr>
+        <!--        <no-ssr placeholder="Loading...">-->
+        <!--          <swiper :options="swiperOption">-->
+        <!--        <swiper-slide v-for="(team, i) in teams" :key="i" class="slide">-->
+        <team-slideshow-item v-for="(team, i) in teams" :key="i" :item="team" />
+        <!--        </swiper-slide>-->
+        <!--            <div slot="pagination" class="swiper-pagination"></div>-->
+        <!--          </swiper>-->
+        <!--        </no-ssr>-->
       </div>
     </div>
   </section>

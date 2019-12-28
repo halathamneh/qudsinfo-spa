@@ -1,7 +1,11 @@
 <template>
   <section class="aqsa-distance-section" :class="[status]">
-    <aqsa-distance-overlay v-if="status === 'in-progress'" :cancel="cancel" />
-
+    <transition name="aqsa-distance-overlay" :appear="true">
+      <aqsa-distance-overlay
+        v-show="status === 'in-progress'"
+        :cancel="cancel"
+      />
+    </transition>
     <dome-svg ref="dome-svg" class="dome-svg" />
     <div class="section-art">
       <aqsa-distance-art />

@@ -49,6 +49,14 @@ export default {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
   border-radius: 38px;
   height: 425px;
+  margin-bottom: 32px;
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    img {
+      margin-right: 0;
+      margin-left: 18px;
+    }
+  }
 }
 .item-text-bottom {
   display: flex;
@@ -63,7 +71,10 @@ h3 {
   margin-bottom: 24px;
 }
 img {
+  max-width: 325px;
   height: 100%;
+  margin-right: 28px;
+  margin-left: 0;
 }
 .stats-item {
   display: flex;

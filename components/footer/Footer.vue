@@ -5,14 +5,7 @@
         <b-col>
           <h3>{{ $t('language') }}</h3>
           <div>
-            <select name="language" id="language">
-              <option value="ar"
-                >{{ $t('arabic') }} - {{ $t('arabic-short') }}</option
-              >
-              <option value="en"
-                >{{ $t('english') }} - {{ $t('english-short') }}</option
-              >
-            </select>
+            <LangSwitchDropdown />
           </div>
         </b-col>
         <b-col>Services</b-col>
@@ -24,13 +17,16 @@
 </template>
 
 <script>
+import LangSwitchDropdown from '../LangSwitchDropdown'
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  components: { LangSwitchDropdown }
 }
 </script>
 
 <style scoped>
 footer {
   padding-top: 120px;
+  padding-bottom: 40px;
 }
 </style>
