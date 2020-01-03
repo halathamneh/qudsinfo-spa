@@ -11,7 +11,7 @@
       class="navbar-collapse"
     >
       <b-navbar-nav>
-        <nuxt-link class="nav-link" to="/">معلوماتنا</nuxt-link>
+        <nuxt-link class="nav-link" to="/information">معلوماتنا</nuxt-link>
         <nuxt-link class="nav-link" to="/">القدس عن قرب</nuxt-link>
         <nuxt-link class="nav-link" to="/">الأخبار</nuxt-link>
         <nuxt-link class="nav-link" to="/">المكتبة</nuxt-link>

@@ -55,6 +55,10 @@ export default {
           {
             set: '@fortawesome/free-solid-svg-icons',
             icons: ['fas']
+          },
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
           }
         ]
       }
@@ -87,7 +91,11 @@ export default {
     ],
     lazy: true,
     langDir: 'lang/',
-    defaultLocale: 'ar'
+    defaultLocale: 'ar',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'qudsinfo_language_key'
+    }
   },
   /*
 
