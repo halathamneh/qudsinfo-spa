@@ -68,6 +68,7 @@ export default {
   display: flex;
   margin-right: 20px;
   padding: 0;
+  flex-wrap: wrap;
   &-item {
     margin: 0 4px;
     svg {

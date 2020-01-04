@@ -36,16 +36,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer-contact-item {
-  margin: 10px 0 25px;
-  font-size: 14px;
-  color: $footer-color-secondary;
-  svg {
-    margin-left: 6px;
+.footer-contact {
+  &-item {
+    margin: 10px 0 25px;
+    font-size: 14px;
+    color: $footer-color-secondary;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    svg {
+      margin-left: 6px;
+    }
+
+    a {
+      font-size: 16px;
+      color: inherit;
+    }
   }
-  a {
-    font-size: 16px;
-    color: inherit;
+  @include media-breakpoint-down(sm) {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    &-item {
+      padding-right: 16px;
+    }
   }
 }
 </style>

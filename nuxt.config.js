@@ -26,7 +26,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/VueTypedJs', { src: '~/plugins/carousel', ssr: false }],
+  plugins: [
+    '~/plugins/VueTypedJs',
+    { src: '~/plugins/carousel', ssr: false },
+    '~/plugins/VueMq'
+  ],
   /*
    ** Nuxt.js dev-modules
    */

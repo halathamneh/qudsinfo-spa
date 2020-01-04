@@ -32,3 +32,15 @@ body {
 .swiper-pagination-bullet-active {
   background-color: rgba(#ffffff, 0.5) !important;
 }
+
+.accordion-enter-active,
+.accordion-leave-active {
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
+  will-change: height;
+}
+.accordion-leave-to,
+.accordion-enter {
+  height: 0;
+  opacity: 0;
+}
