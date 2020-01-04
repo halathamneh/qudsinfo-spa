@@ -50,11 +50,37 @@ export default {
   border-radius: 38px;
   height: 425px;
   margin-bottom: 32px;
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-    img {
-      margin-right: 0;
-      margin-left: 18px;
+  @include media-breakpoint-up(sm) {
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      img {
+        margin-right: 0;
+        margin-left: 18px;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 32px;
+    flex-direction: column-reverse;
+    height: auto;
+    .item-content {
+      text-align: center;
+      p {
+        display: none;
+      }
+    }
+    h3 {
+      font-size: 24px;
+      margin-top: 16px;
+    }
+    .item-image {
+      text-align: center;
+      img {
+        height: auto;
+        margin: 0 0 32px;
+        width: 50%;
+      }
     }
   }
 }
