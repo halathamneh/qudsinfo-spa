@@ -123,7 +123,6 @@ img {
   &-number {
     font-size: 24px;
     font-weight: bold;
-    font-family: 'Exo 2', sans-serif;
   }
   &.stats-read-more {
     .stats-item-circle {

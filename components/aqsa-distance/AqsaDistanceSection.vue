@@ -1,6 +1,6 @@
 <template>
-  <section class="aqsa-distance-section" :class="[status]">
-    <transition name="aqsa-distance-overlay" :appear="true">
+  <section :class="[status]" class="aqsa-distance-section">
+    <transition :appear="true" name="aqsa-distance-overlay">
       <aqsa-distance-overlay
         v-show="status === 'in-progress'"
         :cancel="cancel"
@@ -26,8 +26,8 @@
       <div class="section-content">
         <button
           id="aqsa-distance-button"
-          class="btn btn-lg btn-aqsa-distance"
           @click="aqsaDistanceClick"
+          class="btn btn-lg btn-aqsa-distance"
         >
           {{ $t('click aqsa distance') }}
         </button>

@@ -53,4 +53,15 @@ export default {
     }
   }
 }
+@include media-breakpoint-down(sm) {
+  .title {
+    width: 100%;
+    font-size: 14px;
+    margin: 0;
+  }
+  .nav-link {
+    margin-top: 0;
+    font-size: 14px;
+  }
+}
 </style>

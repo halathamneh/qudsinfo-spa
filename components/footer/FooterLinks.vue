@@ -1,15 +1,15 @@
 <template>
   <div :class="{ 'footer-links': true, toggled }">
-    <h3 class="footer-section-title" @click="toggleLinks">
+    <h3 @click="toggleLinks" class="footer-section-title">
       {{ title }}
       <fa :icon="['fas', 'angle-down']" :class="{ rotate: toggled }" />
     </h3>
     <transition
-      name="accordion"
       @before-enter="beforeEnter"
       @enter="enter"
       @before-leave="beforeLeave"
       @leave="leave"
+      name="accordion"
     >
       <ul v-show="toggled" class="links-list">
         <li v-for="(link, i) in links" :key="i">

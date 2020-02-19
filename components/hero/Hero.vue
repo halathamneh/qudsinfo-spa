@@ -63,7 +63,7 @@ export default {
     display: block;
   }
   .slogan {
-    font-size: 30px;
+    font-size: 24px;
     color: #c9b4d1;
     margin: 8px 0;
   }

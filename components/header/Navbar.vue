@@ -6,8 +6,8 @@
       :toggle-menu="toggleMenu"
     />
     <div
-      v-if="menuVisible || desktop"
       id="nav-collapse"
+      v-if="menuVisible || desktop"
       class="navbar-collapse"
     >
       <b-navbar-nav>

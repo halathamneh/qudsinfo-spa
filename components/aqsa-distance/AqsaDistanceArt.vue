@@ -36,7 +36,10 @@
 </template>
 
 <script>
-import { ParallaxContainer, ParallaxElement } from 'vue-mouse-parallax'
+import {
+  ParallaxContainer,
+  ParallaxElement
+} from 'vue-mouse-parallax/src/components'
 import GlobeSvg from '~/assets/images/aqsa-distance/globe.svg?inline'
 import CloudSvg from '~/assets/images/aqsa-distance/cloud.svg?inline'
 

@@ -5,8 +5,8 @@
       'hamburger--squeeze': true,
       'is-active': active
     }"
-    type="button"
     @click="toggleMenu"
+    type="button"
   >
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
