@@ -38,7 +38,7 @@ export default {
     toggled: true
   }),
   mounted() {
-    this.toggled = this.$mq === 'mobile'
+    this.toggled = this.$mq !== 'sm'
   },
   methods: {
     toggleLinks() {
