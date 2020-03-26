@@ -42,5 +42,7 @@ export default {
   contact: 'تواصل معنا',
   phone: 'هاتف',
   whatsapp: 'WhatsApp',
-  email: 'البريد الإلكتروني'
+  email: 'البريد الإلكتروني',
+  subjects: 'المواضيع',
+  'all information': 'جميع المعلومات  '
 }

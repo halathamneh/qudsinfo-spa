@@ -15,5 +15,7 @@ export default {
   arabic: 'العربية',
   'arabic-short': 'AR',
   english: 'English',
-  'english-short': 'EN'
+  'english-short': 'EN',
+  subjects: 'Subjects',
+  'all information': 'All Information'
 }

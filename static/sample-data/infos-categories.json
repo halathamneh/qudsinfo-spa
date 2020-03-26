@@ -1,0 +1,15 @@
+[
+  { "label": "جميع المعلومات", "to": "/information" },
+  {
+    "label": "الرباط في المسجد الأقصى",
+    "to": "/information/category/test"
+  },
+  {
+    "label": "المعالم",
+    "to": "/information/category/another",
+    "children": [
+      { "label": "أسواق البلدة القديمة", "to": "/information/category/inner" },
+      { "label": "قرى القدس", "to": "/information/category/inner2" }
+    ]
+  }
+]

@@ -44,3 +44,17 @@ body {
   height: 0;
   opacity: 0;
 }
+
+.page-container {
+  margin-top: 60px;
+  margin-bottom: 75px;
+}
+
+.flex-layout-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .page-container {
+    flex: 1;
+  }
+}

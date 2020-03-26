@@ -1,10 +1,13 @@
 <template>
-  <div class="container">BYE BYE</div>
+  <category-body />
 </template>
 
 <script>
+import CategoryBody from '../../components/information/CategoryBody'
 export default {
-  layout: 'info'
+  name: 'InformationIndex',
+  components: { CategoryBody },
+  layout: 'written-info'
 }
 </script>
 

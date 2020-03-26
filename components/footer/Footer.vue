@@ -56,8 +56,8 @@
 import SocialLinks from '../common/SocialLinks'
 import FooterLinks from './FooterLinks'
 import FooterContact from './FooterContact'
-import servicesLinks from '~/assets/sample-data/services.json'
-import aboutLinks from '~/assets/sample-data/about.json'
+import servicesLinks from '~/static/sample-data/services.json'
+import aboutLinks from '~/static/sample-data/about.json'
 export default {
   name: 'Footer',
   components: { FooterContact, FooterLinks, SocialLinks },

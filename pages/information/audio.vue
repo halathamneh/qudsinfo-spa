@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="container">
-      hello
-    </div>
+    Audio Page
   </div>
 </template>
 

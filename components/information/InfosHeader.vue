@@ -4,7 +4,10 @@
       <b-nav-text class="title">{{ $t('our info') }}:</b-nav-text>
       <b-nav-item
         :to="localePath('information')"
-        :active="$route.path === localePath('information')"
+        :active="
+          $route.path === localePath('information') ||
+            $route.path.startsWith(localePath('information-category-slug'))
+        "
       >
         <fa :icon="['fas', 'eye']" />
         {{ $t('written') }}
@@ -42,9 +45,11 @@ export default {
   font-weight: bold;
   margin: 0 16px;
   color: $primary-dark;
+  padding: 0;
 }
 .nav {
   padding: 0;
+  align-items: center;
   &-link {
     line-height: 1;
     color: #a0a0a0;

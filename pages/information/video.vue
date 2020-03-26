@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="container">
-      hello
-    </div>
+    Videos Page
   </div>
 </template>
 

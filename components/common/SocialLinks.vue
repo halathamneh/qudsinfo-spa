@@ -42,7 +42,7 @@ import {
   WhatsApp,
   Youtube
 } from '../Icons'
-import socialLinks from '~/assets/sample-data/social-links.json'
+import socialLinks from '~/static/sample-data/social-links.json'
 export default {
   name: 'SocialLinks',
   components: {

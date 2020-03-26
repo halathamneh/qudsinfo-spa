@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import contactItems from '~/assets/sample-data/contact.json'
+import contactItems from '~/static/sample-data/contact.json'
 export default {
   name: 'FooterContact',
   data: () => ({

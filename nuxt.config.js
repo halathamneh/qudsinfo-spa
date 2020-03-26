@@ -1,4 +1,5 @@
 export default {
+  dev: process.env.NODE_ENV !== 'production',
   mode: 'spa',
   /*
    ** Headers of the page
