@@ -8,8 +8,8 @@
 
 <script>
 import Tree from '../tree/Tree'
-import endpoints from '../../config/EndPoints'
 import TreeLoader from '../common/loaders/TreeLoader'
+import { getCategories } from '../../API/Infos'
 export default {
   name: 'InfosTree',
   components: { TreeLoader, Tree },
@@ -18,7 +18,7 @@ export default {
     loading: true
   }),
   mounted() {
-    this.$axios.$get(endpoints.infosCategories).then((data) => {
+    getCategories().then((data) => {
       this.subjects = data
       this.loading = false
     })
@@ -29,7 +29,7 @@ export default {
 <style lang="scss">
 .infos-subjects-tree {
   margin: 8px 0 0 -30px;
-  padding: 30px 30px 40px 80px;
+  padding: 30px 30px 40px;
   background-color: #e5e5e5;
   border-radius: 0 5px 5px 0;
   h3 {

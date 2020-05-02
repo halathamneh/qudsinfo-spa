@@ -17,5 +17,7 @@ export default {
   english: 'English',
   'english-short': 'EN',
   subjects: 'Subjects',
-  'all information': 'All Information'
+  'all information': 'All Information',
+  back: 'Back',
+  'show infos': 'Show More Information'
 }

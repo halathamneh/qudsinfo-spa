@@ -1,6 +1,12 @@
 export default {
   dev: process.env.NODE_ENV !== 'production',
   mode: 'spa',
+
+  server: {
+    port: 3000, // default: 3000
+    host: '127.0.0.3' // default: localhost
+  },
+
   /*
    ** Headers of the page
    */
@@ -30,7 +36,8 @@ export default {
   plugins: [
     '~/plugins/VueTypedJs',
     { src: '~/plugins/carousel', ssr: false },
-    '~/plugins/VueMq'
+    '~/plugins/VueMq',
+    '~/plugins/String.format'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -46,7 +53,6 @@ export default {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     'nuxt-i18n',
     'nuxt-svg',

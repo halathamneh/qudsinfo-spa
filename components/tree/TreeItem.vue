@@ -50,17 +50,40 @@ export default {
 <style lang="scss">
 .tree-item {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1;
+  position: relative;
   a {
     display: inline-block;
-    padding: 7px 0;
+    padding: 4px 0;
     color: #000;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &.active > a {
     font-weight: bold;
   }
   &.expandable {
+  }
+  .sub-tree &::before {
+    content: '';
+    height: 12px;
+    width: 10px;
+    position: absolute;
+    top: 0;
+    right: -17px;
+    border-right: 1px solid #a0a0a0;
+    border-bottom: 1px solid #a0a0a0;
+  }
+  .sub-tree &:not(:last-child)::after {
+    content: '';
+    height: 18px;
+    position: absolute;
+    top: 10px;
+    right: -17px;
+    border-right: 1px solid #a0a0a0;
   }
 }
 </style>

@@ -44,5 +44,7 @@ export default {
   whatsapp: 'WhatsApp',
   email: 'البريد الإلكتروني',
   subjects: 'المواضيع',
-  'all information': 'جميع المعلومات  '
+  'all information': 'جميع المعلومات  ',
+  back: 'عودة',
+  'show infos': 'عرض المزيد المعلومات'
 }

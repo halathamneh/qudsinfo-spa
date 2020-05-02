@@ -26,9 +26,10 @@ export default {
 <style lang="scss">
 .tree {
   list-style: none;
-  padding-right: 24px;
+  padding-right: 18px;
   &.sub-tree {
-    margin-top: 7px;
+    margin: 7px;
+    padding-right: 22px;
   }
 }
 </style>

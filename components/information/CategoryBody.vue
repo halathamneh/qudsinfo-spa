@@ -1,23 +1,58 @@
 <template>
   <div class="card category-body">
-    <img src="https://picsum.photos/900/250/?image=3" alt="" class="card-img" />
-    <div class="card-head">
-      <h2 class="card-title text-white font-weight-bold">{{ slug }}</h2>
+    <div :class="imageWrapperClass">
+      <img :src="image" alt="" class="card-img" />
+      <div class="card-head">
+        <transition name="fade">
+          <b-button
+            v-if="isInfosMode"
+            @click="toggleInfos"
+            variant="outline-light ml-3"
+          >
+            <fa :icon="['fas', 'arrow-right']" />
+            <span class="mr-2">{{ $t('back') }}</span>
+          </b-button>
+        </transition>
+        <h2 class="card-title text-white font-weight-bold">
+          {{ category.label }}
+        </h2>
+        <transition name="fade">
+          <div v-if="!isInfosMode" class="mr-auto">
+            <b-button @click="toggleInfos" variant="success">{{
+              $t('show infos')
+            }}</b-button>
+          </div>
+        </transition>
+      </div>
     </div>
-    <div class="card-body">
-      <tree-loader v-if="loading" />
-      <div v-else v-html="category.description" class="card-text"></div>
-    </div>
+    <transition :name="isInfosMode ? 'slide-reverse' : 'slide'">
+      <div key="details" v-if="!isInfosMode" class="card-body">
+        <tree-loader v-if="loading" />
+        <template v-else>
+          <div class="card-text">
+            <template v-for="paragraph in category.description">
+              <h3>{{ paragraph.title }}</h3>
+              <div v-html="paragraph.textHTML"></div>
+            </template>
+          </div>
+        </template>
+      </div>
+      <div key="infos-list" v-else class="card-body">
+        <category-infos :infos="infos" />
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
-import endpoints from '../../config/EndPoints'
 import TreeLoader from '../common/loaders/TreeLoader'
+import { getCategoryDetails, getCategoryInfos } from '../../API/Infos'
+import CategoryInfos from './CategoryInfos'
+import placeholderImageWide from '~/assets/images/placeholder-wide.svg'
 
 export default {
   name: 'CategoryBody',
-  components: { TreeLoader },
+  components: { CategoryInfos, TreeLoader },
   props: {
     slug: {
       type: String,
@@ -28,31 +63,63 @@ export default {
   },
   data: () => ({
     category: {},
-    loading: true
+    loading: true,
+    image: placeholderImageWide,
+    imageWrapperClass: { 'card-img-wrapper': true, small: false },
+    isInfosMode: false,
+    infos: []
   }),
   mounted() {
-    this.$axios.$get(endpoints.infoCategory).then((data) => {
-      this.category = data
+    getCategoryDetails(this.slug).then((cat) => {
+      this.category = cat
+      this.image = cat.image
       this.loading = false
     })
+  },
+  methods: {
+    toggleInfos() {
+      this.isInfosMode = !this.isInfosMode
+      if (this.infos.length === 0) {
+        getCategoryInfos(this.slug).then((infos) => (this.infos = infos))
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .category-body {
+  height: 100%;
   border-radius: $border-radius;
   overflow: hidden;
   box-shadow: 0 2px 15px rgba(1, 101, 51, 0.2);
   .card-head {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     padding: 32px;
-    background: $brand-gradient;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 2.29%,
+      rgba(0, 0, 0, 0.9) 92.88%
+    );
+    display: flex;
+    .card-title {
+      text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.75);
+      margin-bottom: 0;
+    }
   }
 
-  .card-img {
-    height: 164px;
-    object-fit: cover;
+  .card-img-wrapper {
+    position: relative;
+    height: 278px;
     border-radius: 0;
+    border-bottom: 5px solid $brand-light;
+    .card-img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
   .card-text {
     max-width: 1140px;

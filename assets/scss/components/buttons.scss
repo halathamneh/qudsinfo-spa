@@ -81,6 +81,11 @@
       }
     }
   }
+  &[class*='btn-outline'] {
+    &::before, &::after {
+      content: none;
+    }
+  }
 }
 
 .btn-aqsa-distance {
