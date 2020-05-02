@@ -1,6 +1,12 @@
 export default {
   dev: process.env.NODE_ENV !== 'production',
   mode: 'spa',
+  env: {
+    remoteHost:
+      process.env.NODE_ENV !== 'production'
+        ? 'https://qudsinfo.test'
+        : 'https://qudsinfo.com'
+  },
 
   server: {
     port: 3000, // default: 3000
