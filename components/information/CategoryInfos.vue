@@ -11,12 +11,25 @@
         </div>
       </li>
     </ul>
+    <ul v-else>
+      <li>
+        <div class="info-list-item"><box-loader /></div>
+      </li>
+      <li>
+        <div class="info-list-item"><box-loader /></div>
+      </li>
+      <li>
+        <div class="info-list-item"><box-loader /></div>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import BoxLoader from '../common/loaders/BoxLoader'
 export default {
   name: 'CategoryInfos',
+  components: { BoxLoader },
   props: {
     infos: {
       type: Array,
