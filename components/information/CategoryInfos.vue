@@ -3,8 +3,11 @@
     <ul v-if="infos.length > 0">
       <li v-for="info in infos" :key="info.id">
         <div class="info-list-item">
-          <h3 class="info-title">{{ info.title }}</h3>
-          <div v-html="info.content" class="info-text"></div>
+          <div class="info-body">
+            <h3 class="info-title">{{ info.title }}</h3>
+            <div v-html="info.content" class="info-text"></div>
+          </div>
+          <img :src="info.image" />
         </div>
       </li>
     </ul>
@@ -41,6 +44,15 @@ export default {
   .info-list-item {
     padding: 24px;
     border: 1px solid $divider;
+    display: flex;
+  }
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  .info-body {
+    margin-left: 16px;
   }
 }
 </style>
