@@ -4,11 +4,11 @@ export default {
   env: {
     remoteHost:
       process.env.NODE_ENV !== 'production'
-        ? 'https://qudsinfo.test'
+        ? 'http://qudsinfo.test'
         : 'https://qudsinfo.com',
     apiToken:
       process.env.NODE_ENV !== 'production'
-        ? 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcXVkc2luZm8udGVzdCIsImlhdCI6MTU4Nzk4Mjg0MCwibmJmIjoxNTg3OTgyODQwLCJleHAiOjE5MDMzNDI4NDAsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.2Qoo0pF_JAxYEjpMw8HUYZx_IkGb0JIYH25uIqIMN30'
+        ? 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xdWRzaW5mby50ZXN0IiwiaWF0IjoxNTkwOTMzODMwLCJuYmYiOjE1OTA5MzM4MzAsImV4cCI6MTkwNjI5MzgzMCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.O3Q-mC7MSTino-NfINNx-7yTCiDfsPcHNiYmV2MXfEM'
         : 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcXVkc2luZm8uY29tIiwiaWF0IjoxNTg4NDYwODk1LCJuYmYiOjE1ODg0NjA4OTUsImV4cCI6MTkwMzgyMDg5NSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.JVZlFz7pt5FaAIEfKinqrVgaKXeFDtvrbzPq6y__p8Y'
   },
 
@@ -47,7 +47,8 @@ export default {
     '~/plugins/VueTypedJs',
     { src: '~/plugins/carousel', ssr: false },
     '~/plugins/VueMq',
-    '~/plugins/String.format'
+    '~/plugins/String.format',
+    '~/plugins/PerfectScrollbar'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -125,6 +126,19 @@ export default {
     bootstrapCSS: false, // Or `css: false`
     bootstrapVueCSS: false // Or `bvCSS: false`
   },
+
+  router: {
+    scrollBehavior(to) {
+      if (to.hash) {
+        return window.scrollTo({
+          top: document.querySelector(to.hash).offsetTop + window.innerHeight,
+          behavior: 'smooth'
+        })
+      }
+      return window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  },
+
   /*
    ** Build configuration
    */

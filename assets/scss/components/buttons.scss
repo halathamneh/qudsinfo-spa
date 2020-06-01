@@ -9,6 +9,9 @@
   transition: all 0.25s;
   display: inline-flex;
   align-items: center;
+  &-sm {
+    padding: 6px 20px;
+  }
 
   &::before,
   &::after {

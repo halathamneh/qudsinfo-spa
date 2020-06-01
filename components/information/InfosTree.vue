@@ -1,27 +1,25 @@
 <template>
-  <div class="infos-subjects-tree">
+  <perfect-scrollbar class="infos-subjects-tree">
     <h3>{{ $t('subjects') }}</h3>
     <tree-loader v-if="loading" />
     <tree :nodes="subjects" :active="$route.path" />
-  </div>
+  </perfect-scrollbar>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Tree from '../tree/Tree'
 import TreeLoader from '../common/loaders/TreeLoader'
-import { getCategories } from '../../API/Infos'
+
 export default {
   name: 'InfosTree',
   components: { TreeLoader, Tree },
-  data: () => ({
-    subjects: [],
-    loading: true
+  computed: mapGetters({
+    subjects: 'infos/subjects',
+    loading: 'infos/subjectsLoading'
   }),
   mounted() {
-    getCategories().then((data) => {
-      this.subjects = data
-      this.loading = false
-    })
+    this.$store.dispatch('infos/fetchCategories')
   }
 }
 </script>
@@ -32,6 +30,11 @@ export default {
   padding: 30px 30px 40px;
   background-color: #e5e5e5;
   border-radius: 0 5px 5px 0;
+  &.ps {
+    height: calc(100vh - 66px);
+    top: 66px;
+    position: sticky;
+  }
   h3 {
     color: $text-muted;
     font-size: 14px;

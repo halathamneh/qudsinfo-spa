@@ -3,6 +3,7 @@ import api from './API'
 
 const formatReceivedCategory = (category) => {
   const out = {
+    id: category.id,
     label: category.label,
     to: `/information/category/${category.slug}`
   }

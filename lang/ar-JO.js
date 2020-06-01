@@ -46,5 +46,8 @@ export default {
   subjects: 'المواضيع',
   'all information': 'جميع المعلومات  ',
   back: 'عودة',
-  'show infos': 'عرض المزيد المعلومات'
+  'show infos': 'عرض المزيد المعلومات',
+  'view info': 'عرض المعلومة',
+  'please select subject': 'الرجاء اختيار الموضوع',
+  'continue reading': 'أكمل القراءة'
 }

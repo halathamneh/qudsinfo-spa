@@ -1,28 +1,25 @@
 <template>
   <div class="card category-body">
     <div :class="imageWrapperClass">
-      <img :src="image" alt="" class="card-img" />
+      <img :src="category.image" alt="" class="card-img" />
       <div class="card-head">
-        <transition name="fade">
-          <b-button
-            v-if="isInfosMode"
-            @click="toggleInfos"
-            variant="outline-light ml-3"
-          >
-            <fa :icon="['fas', 'arrow-right']" />
-            <span class="mr-2">{{ $t('back') }}</span>
-          </b-button>
-        </transition>
         <h2 class="card-title text-white font-weight-bold">
           {{ category.label }}
         </h2>
-        <transition name="fade">
-          <div v-if="!isInfosMode" class="mr-auto">
-            <b-button @click="toggleInfos" variant="success">{{
-              $t('show infos')
-            }}</b-button>
-          </div>
-        </transition>
+        <div v-if="hasDescription" class="mr-auto">
+          <transition name="fade">
+            <b-button
+              v-if="!isInfosMode"
+              @click="toggleInfos"
+              variant="success"
+              >{{ $t('show infos') }}</b-button
+            >
+            <b-button v-else @click="toggleInfos" variant="light">
+              <fa :icon="['fas', 'arrow-right']" />
+              <span class="mr-2">{{ $t('back') }}</span>
+            </b-button>
+          </transition>
+        </div>
       </div>
     </div>
     <transition :name="isInfosMode ? 'slide-reverse' : 'slide'">
@@ -45,10 +42,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import TreeLoader from '../common/loaders/TreeLoader'
-import { getCategoryDetails, getCategoryInfos } from '../../API/Infos'
+import { getCategoryInfos } from '../../API/Infos'
 import CategoryInfos from './CategoryInfos'
-import placeholderImageWide from '~/assets/images/placeholder-wide.svg'
 
 export default {
   name: 'CategoryBody',
@@ -62,18 +59,26 @@ export default {
     }
   },
   data: () => ({
-    category: {},
-    loading: true,
-    image: placeholderImageWide,
     imageWrapperClass: { 'card-img-wrapper': true, small: false },
     isInfosMode: false,
     infos: []
   }),
+  computed: {
+    ...mapGetters({
+      category: 'infos/subjectDetails',
+      loading: 'infos/categoryLoading'
+    }),
+    hasDescription() {
+      return this.category.description && this.category.description.length
+    }
+  },
   mounted() {
-    getCategoryDetails(this.slug).then((cat) => {
-      this.category = cat
-      this.image = cat.image
-      this.loading = false
+    this.$store.dispatch('infos/fetchDetails', this.slug).then(() => {
+      if (!this.hasDescription) {
+        this.toggleInfos()
+      } else {
+        this.isInfosMode = false
+      }
     })
   },
   methods: {

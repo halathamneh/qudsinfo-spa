@@ -1,14 +1,23 @@
 <template>
-  <category-body />
+  <div>
+    <span>{{ $t('please select subject') }}</span>
+  </div>
 </template>
 
 <script>
-import CategoryBody from '../../components/information/CategoryBody'
 export default {
   name: 'InformationIndex',
-  components: { CategoryBody },
   layout: 'written-info'
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+div {
+  width: 100%;
+  height: 100%;
+  padding: 150px 0;
+  background-color: #fff;
+  color: #aaa;
+  text-align: center;
+}
+</style>

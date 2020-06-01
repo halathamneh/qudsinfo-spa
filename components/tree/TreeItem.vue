@@ -6,7 +6,17 @@
       active: isActive
     }"
   >
-    <nuxt-link :to="node.to">{{ node.label }}</nuxt-link>
+    <nuxt-link :to="node.to" :id="`tree-item-${node.id}`">{{
+      node.label
+    }}</nuxt-link>
+    <b-tooltip
+      :target="`tree-item-${node.id}`"
+      triggers="hover"
+      placement="left"
+      boundary="viewport"
+    >
+      {{ node.label }}
+    </b-tooltip>
     <tree
       v-if="isExpandable"
       :subtree="true"
@@ -58,7 +68,7 @@ export default {
     padding: 4px 0;
     color: #000;
     white-space: nowrap;
-    width: 100%;
+    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
   }

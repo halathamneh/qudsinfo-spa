@@ -5,9 +5,12 @@
         <div class="info-list-item">
           <div class="info-body">
             <h3 class="info-title">{{ info.title }}</h3>
-            <div v-html="info.content" class="info-text"></div>
+            <div v-html="info.excerpt" class="info-text"></div>
+            <b-button variant="light" size="sm" class="mt-3">{{
+              $t('view info')
+            }}</b-button>
           </div>
-          <img :src="info.image" />
+          <img :src="info.image.thumbnail" />
         </div>
       </li>
     </ul>
@@ -55,9 +58,15 @@ export default {
     padding: 16px;
   }
   .info-list-item {
-    padding: 24px;
     border: 1px solid $divider;
     display: flex;
+    height: 100%;
+  }
+  img {
+    border-radius: 0 50% 50% 0;
+    object-fit: cover;
+    object-position: center;
+    flex: 1;
   }
   h3 {
     font-size: 22px;
@@ -65,7 +74,8 @@ export default {
     margin-bottom: 16px;
   }
   .info-body {
-    margin-left: 16px;
+    padding: 24px 24px 24px 16px;
+    width: 75%;
   }
 }
 </style>
