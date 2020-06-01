@@ -44,7 +44,6 @@
 <script>
 import { mapGetters } from 'vuex'
 import TreeLoader from '../common/loaders/TreeLoader'
-import { getCategoryInfos } from '../../API/Infos'
 import CategoryInfos from './CategoryInfos'
 
 export default {
@@ -53,19 +52,17 @@ export default {
   props: {
     slug: {
       type: String,
-      default() {
-        return this.$t('all information')
-      }
+      default: () => ''
     }
   },
   data: () => ({
     imageWrapperClass: { 'card-img-wrapper': true, small: false },
-    isInfosMode: false,
-    infos: []
+    isInfosMode: false
   }),
   computed: {
     ...mapGetters({
       category: 'infos/subjectDetails',
+      infos: 'infos/infosList',
       loading: 'infos/categoryLoading'
     }),
     hasDescription() {
@@ -85,7 +82,7 @@ export default {
     toggleInfos() {
       this.isInfosMode = !this.isInfosMode
       if (this.infos.length === 0) {
-        getCategoryInfos(this.slug).then((infos) => (this.infos = infos))
+        this.$store.dispatch('infos/fetchInfosList', this.slug)
       }
     }
   }

@@ -6,9 +6,12 @@
       active: isActive
     }"
   >
-    <nuxt-link :to="node.to" :id="`tree-item-${node.id}`">{{
-      node.label
-    }}</nuxt-link>
+    <nuxt-link
+      :to="node.to"
+      :id="`tree-item-${node.id}`"
+      @click="update(node.slug)"
+      >{{ node.label }}</nuxt-link
+    >
     <b-tooltip
       :target="`tree-item-${node.id}`"
       triggers="hover"
@@ -53,6 +56,11 @@ export default {
   mounted() {
     this.isExpandable = this.node.children && this.node.children.length > 0
     this.isActive = this.node.to === this.active
+  },
+  methods: {
+    update(slug) {
+      this.$store.dispatch('infos/setCurrentSubject', slug)
+    }
   }
 }
 </script>

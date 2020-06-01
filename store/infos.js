@@ -53,9 +53,9 @@ export const actions = {
       commit('CATEGORY_LOADING', false)
     })
   },
-  fetchInfosList({ commit, state }) {
+  fetchInfosList({ commit }, slug) {
     commit('CATEGORY_LOADING', true)
-    return getCategoryInfos(state.slug).then((infos) => {
+    return getCategoryInfos(slug).then((infos) => {
       commit('FETCH_INFOS', infos)
       commit('CATEGORY_LOADING', false)
     })
@@ -68,6 +68,9 @@ export const getters = {
   },
   subjectDetails(state) {
     return state.subjectDetails || defaultSubjectDetails
+  },
+  infosList(state) {
+    return state.infos
   },
   subjectsLoading(state) {
     return state.subjectsLoading
